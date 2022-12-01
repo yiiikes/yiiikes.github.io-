@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Project</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <header>
+<div id="logo" onclick="slowScroll('#top')">
+  <span>IT2-2218</span>
+</div>
+<div id="about">
+<a href="#"title="Обо мне" onclick="slowScroll('#main')">Обо мне</a>
+<a href="#" onclick="slowScroll('#overview')" title="Что я могу?">Что я могу?</a>
+<a href="#" onclick="slowScroll('#contacts')" title="Контакты">Контакты</a>
+</div>
+  </header>
+
+  <div id="top">
+    <h1>Привет!</h1>
+    <h3>Это мой первый сайт</h3>
+  </div>
+
+  <div id="main">
+    <div class="intro">
+      <h2>Обо мне</h2>
+      <span>Меня зовут Тамерлан, мне 19 лет.</span>
+    </div>
+    <div class="text">
+      <span>Я живу в городе Алматы, учусь в одном из лучших IT вузов страны IITU.Увлекаюсь программированием, видеоиграми и баскетболом.Хочу стать достойным специалистом, и это мой первый шаг к этому!</span>
+    </div>
+  </div>
+
+  <div id="overview">
+    <h2>Что я могу?</h2>
+    <h4>Владею базовыми навыками программирования, а также HTML и CSS</h4>
+
+    <div class="img">
+      <img src="https://sun9-east.userapi.com/sun9-30/s/v1/ig2/OCRXbed3QvdTNZn5mf3PTMvyiu_idJvwaslASutTeESrP5_iT9mfj3sysGfgHB9cnJKZ5romcklzPiVNup9wKuLZ.jpg?size=400x400&quality=95&type=album" alt="">
+      <span></span>
+    </div>
+    <div class="img">
+      <img src="https://sun9-east.userapi.com/sun9-35/s/v1/ig2/8xQH6LFsPRcIYa6Vsmj_LSn2LEafGRwkUYTjJBbtdCRkUrEUXpx39yNS5eIHGgY4pGNrK4jWNW_7JgT0UrII6-IU.jpg?size=400x400&quality=95&type=album" alt="">
+      <span></span>
+    </div>
+  </div>
+  <div id="contacts">
+    <center><h5>Связаться со мной:</h5></center>
+    <form id="form_input">
+      <label for="name">Имя <span>*</span></label><br>
+      <input type="text" placeholder="Введите имя" name="name" id="name"><br>
+      <label for="email">Ваша почта <span>*</span></label><br>
+			<input type="email" placeholder="Введите email" name="email" id="email"><br>
+			<label for="message">Сообщение <span>*</span></label><br>
+			<textarea placeholder="Введите ваше сообщение" name="message" id="message"></textarea><br>
+			<div id="mess_send" class="btn">Отправить</div>
+    </form>
+  </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+ function slowScroll(id) {
+   $('html, body').animate({
+     scrollTop: $(id).offset().top
+    }, 500);
+  }
+  $(document).on("scroll",function () {
+    if($(window).scrollTop() === 0)
+      $("header").removeClass("fixed");
+    else
+      $("header").attr("class","fixed");
+  });
+</script>
+</body>
+</html>
